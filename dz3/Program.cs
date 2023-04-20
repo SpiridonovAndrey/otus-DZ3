@@ -36,12 +36,11 @@ namespace dz3
                     if (!result1 || !result2 || !result3)
                     {
                         var ex = new NotInt(str+" не целое");
-                        throw ex;
                     }
                 }
-                catch 
+                catch (Exception ex)
                 {
-                    
+                    throw ex;
                 }
                 
             } while (!result1 || !result2 || !result3);
@@ -52,7 +51,6 @@ namespace dz3
                 if (D < 0) 
                 {
                     var ex = new NotPositive("Вещественных значений не найдено");
-                    throw ex;
                 }
                 else if (D == 0)
                 { 
@@ -66,9 +64,9 @@ namespace dz3
                     Console.WriteLine("x1 = {0}, x2 = {1}",x1,x2);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                throw ex;
             }
         }
         class NotInt : Exception
